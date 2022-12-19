@@ -1,0 +1,23 @@
+# Git
+
+1. Abrir o git na pasta desejada
+2. usar o comando *git init*
+3. “git status” para verificar o status do repositório (relatório para ver quais arquivos ja foram **incluídos** no controle de versão e quais arquivos n foram  **incluídos** quais arquivos não foram atualizados)
+4. Para adicionar arquivos ao controle de versão, deve-se usar o comando —————————>*git add “nome_do_arquivo”*
+5. Para adicionar vários arquivos ao controle de versão usa o comando *git add .*
+6. Para criar versões deve-se usar o comando *git commit -m “Coloca-se esse texto entre aspas para dizer oq foi feito nessa versão (boa pratica)”*
+7. Para enviar a versão do código para o github, temos que definir para aonde nosso código será enviado, usando o comando *git remote add origin link_do_repositório*
+8. Após o passo 7, deve-se definir para qual branch nós estaremos enviando nosso código, usando o comando *git push —set-upstream origin master*
+9. Para atualizar o código e enviar as atualizações para o repositório github, basta apenas seguir alguns passos parecidos com o de criação.  *git add .* → *git commit “comentário”* → *git push* (Não é necessário colocar o link do repositório pois ele ja foi adicionado na primeira vez quando foi criado)
+10. Para ver o histórico de versões que foram adicionadas usa-se o comando *git reflog*
+11. Para navegar entre versões do seu código deve-se usar o comando *git reset —hard id_da_versão* → Conseguimos ver o id das versões com o comando *git reflog*
+12. Usam-se as branchs basicamente para trocarmos de ambiente sem alterar o código principal, assim, minimizando os riscos de bagunçar o código q ja esta funcionando. Se eu tenho um código funcionando e quero testar novas funcionalidades para aquele código, eu posso fazer isso em outro ambiente, ou seja, posso criar uma nova branch e salvar o código com as novas funcionalidades lá, assim eliminando o risco de prejudicar o código.
+13. Para verificar quais branchs existem deve-se usar o comando *git branch*
+14. Para criar uma nova branch usa-se o comando *git branch nome_da_branch* (staging é o nome que geralmente é usado). A branch verde é a que está sendo utilizada.
+15. Para mudar de branch deve-se usar o comando *git checkout nome_da_branch*
+16. Para passar as atualizações do código feitas na branch secundária para a branch principal devemos fazer um “merge”
+17. Primeiro você deve entrar na branch que vc quer que receba as atualizações  e usar o comando *git merge nome_da_branch_que_vai_fornecer_as_atualizações*
+18. após isso, deve-se usar o *git push* e os arquivos da branch principal serão atualizados
+19. Antes de fazer o *git merge* é importante usar o comando *git pull* para pegar  os códigos atualizados do servidor (Se você n fizer isso corre o risco de algum colega de equipe ter alterado o código e você vai ter juntado a branch um código desatualizado)
+20. Para criar uma branch baseada nos arquivos de outra branch diretamente, deve-se usar o comando *git checkout -b nome-da-branch nome-da-branch-que-estou-usando-como-base*
+21. Para n salvar e enviar para os repositórios alguns arquivos, deve-se usar o comando *touch .gitignore* → ele vai criar um arquivo dentro da pasta com o noome “gitignore”, dentro dessa pasta, você deve passar o nome do arquivo ou o seu diretório. Deve se adicionar o arquivo “gitignore” ao repositório também
